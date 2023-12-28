@@ -99,3 +99,4 @@ const Logo = ({
 )
 
 export default Logo
+/* eslint-enable */
