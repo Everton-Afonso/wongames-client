@@ -6,7 +6,6 @@ import { Providers } from './providers'
 
 const poppins = Poppins({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-poppins',
   weight: ['300', '400', '600']
 })

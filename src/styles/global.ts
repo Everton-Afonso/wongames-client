@@ -7,9 +7,9 @@ const GlobalStyles = createGlobalStyle`${css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-poppins);
   }
 
   :root {
@@ -21,18 +21,17 @@ const GlobalStyles = createGlobalStyle`${css`
     --radius: 0.4rem;
 
     //font
-    --family: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
     --light: 300;
     --normal: 400;
     --bold: 600;
 
     //sizes
-    --xsmall: 0.75rem;
-    --small: 0.875rem;
-    --medium: 1rem;
-    --large: 1.125rem;
-    --xlarge: 1.25rem;
-    --xxlarge: 1.75rem;
+    --xsmall: 0.75rem; // 12px
+    --small: 0.875rem; // 14px
+    --medium: 1rem; // 16px
+    --large: 1.125rem; // 18px
+    --xlarge: 1.25rem; // 20px
+    --xxlarge: 1.75rem; // 28px
 
     //color
     --primary: #f231a5;
@@ -45,13 +44,13 @@ const GlobalStyles = createGlobalStyle`${css`
     --darkGray: #2e2f42;
 
     //spacings
-    --xxsmall-spacings: 0.8rem;
-    --xsmall-spacings: 1.6rem;
-    --small-spacings: 2.4rem;
-    --medium-spacings: 3.2rem;
-    --large-spacings: 4rem;
-    --xlarge-spacings: 4.8rem;
-    --xxlarge-spacings: 5.6rem;
+    --xxsmall-spacings: 0.687rem;
+    --xsmall-spacings: 1rem;
+    --small-spacings: 1.5rem;
+    --medium-spacings: 2rem;
+    --large-spacings: 2.5rem;
+    --xlarge-spacings: 3rem;
+    --xxlarge-spacings: 3.5rem;
 
     //layers
     --base: 10;
@@ -67,18 +66,7 @@ const GlobalStyles = createGlobalStyle`${css`
   }
 
   html {
-    @media screen and (max-width: 1024px) {
-      font-size: 93.75%;
-    }
-
-    @media screen and (max-width: 768px) {
-      font-size: 87.5%;
-    }
-  }
-
-  body {
-    font-family: var(--family);
-    font-size: var(--medium);
+    scroll-behavior: smooth;
   }
 `}`
 
