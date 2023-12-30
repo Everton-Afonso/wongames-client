@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`${css`
     --gutter: 3.2rem;
 
     //border
-    --radius: 0.4rem;
+    --radius: 4px;
 
     //font
     --light: 300;
@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`${css`
     --darkGray: #2e2f42;
 
     //spacings
-    --xxsmall-spacings: 0.687rem;
+    --xxsmall-spacings: 0.5rem;
     --xsmall-spacings: 1rem;
     --small-spacings: 1.5rem;
     --medium-spacings: 2rem;

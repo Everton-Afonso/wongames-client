@@ -22,6 +22,7 @@
     ]
   },
   "dependencies": {
+    "@styled-icons/material-outlined": "^10.47.0",
     "eslint-formatter-stylish": "^8.40.0",
     "next": "13.5.4",
     "react": "^18",
