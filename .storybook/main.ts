@@ -2,7 +2,9 @@ const config = {
   staticDirs: ['../public'],
   stories: [
     '../src/components/**/*.stories.tsx',
-    '../src/components/**/stories.tsx'
+    '../src/components/**/stories.tsx',
+    '../src/UI/**/*.stories.tsx',
+    '../src/UI/**/stories.tsx'
   ],
   addons: ['@storybook/addon-essentials'],
   framework: {
