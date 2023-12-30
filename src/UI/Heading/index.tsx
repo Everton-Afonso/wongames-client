@@ -12,10 +12,12 @@ const Heading = ({
   color = 'white',
   lineLeft = false,
   lineBottom = false
-}: HeadingProps) => (
-  <S.Wrapper color={color} lineLeft={lineLeft} lineBottom={lineBottom}>
-    {children}
-  </S.Wrapper>
-)
+}: HeadingProps) => {
+  return (
+    <S.Wrapper color={color} lineLeft={lineLeft} lineBottom={lineBottom}>
+      {children}
+    </S.Wrapper>
+  )
+}
 
 export default Heading
