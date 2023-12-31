@@ -10,7 +10,7 @@ const Menu = () => {
   return (
     <S.WrapperMenu>
       <S.IconWapperMenu>
-        <MenuIcon />
+        <MenuIcon aria-label="Open Menu" />
       </S.IconWapperMenu>
 
       <S.LogoWapperMenu>
@@ -19,11 +19,11 @@ const Menu = () => {
 
       <section>
         <S.IconWapperMenu>
-          <ShoppingCartIcon />
+          <SearchIcon aria-label="Search" />
         </S.IconWapperMenu>
 
         <S.IconWapperMenu>
-          <SearchIcon />
+          <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWapperMenu>
       </section>
     </S.WrapperMenu>
