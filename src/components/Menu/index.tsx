@@ -7,7 +7,10 @@ import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
 import Logo from '../../UI/Logo'
 
+import RegisterBox from './components/RegisterBox'
+
 import * as S from './styles'
+import MenuNav from './components/MenuNav'
 
 const Menu = () => {
   const [isOpen, setisOpen] = useState<boolean>(false)
@@ -41,6 +44,10 @@ const Menu = () => {
           aria-label="Close Menu"
           onClick={handleClosingAndOpeningMenu}
         />
+
+        <MenuNav />
+
+        <RegisterBox />
       </S.MenuFull>
     </S.WrapperMenu>
   )
