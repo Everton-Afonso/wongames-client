@@ -8,11 +8,15 @@ import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 import Logo from '../../UI/Logo'
 
 import RegisterBox from './components/RegisterBox'
-
-import * as S from './styles'
 import MenuNav from './components/MenuNav'
 
-const Menu = () => {
+import * as S from './styles'
+
+export type MenuProps = {
+  username?: string
+}
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setisOpen] = useState<boolean>(false)
 
   const handleClosingAndOpeningMenu = () => {
@@ -45,9 +49,9 @@ const Menu = () => {
           onClick={handleClosingAndOpeningMenu}
         />
 
-        <MenuNav />
+        <MenuNav isLoggedIn={!!username} />
 
-        <RegisterBox />
+        {!username && <RegisterBox />}
       </S.MenuFull>
     </S.WrapperMenu>
   )
