@@ -12,6 +12,7 @@ export const WrapperMenu = styled.menu`
   section {
     display: flex;
     gap: 20px;
+    align-items: center;
   }
 `
 
@@ -31,8 +32,13 @@ export const IconWapperMenu = styled.div`
 `
 
 export const MenuNav = styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: var(--xsmall-spacings);
+  }
+
   a {
     position: relative;
+    color: var(--white);
     font-size: var(--medium);
     margin: 0.3rem var(--small-spacings) 0;
     text-decoration: none;

@@ -6,6 +6,8 @@ import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
 import Logo from '../../UI/Logo'
+import MediaMatch from '../../UI/MediaMatch'
+import Button from '../../UI/Button'
 
 import RegisterBox from './components/RegisterBox'
 import MenuNav from './components/MenuNav'
@@ -25,13 +27,21 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <S.WrapperMenu>
-      <S.IconWapperMenu onClick={handleClosingAndOpeningMenu}>
-        <MenuIcon aria-label="Open Menu" />
-      </S.IconWapperMenu>
+      <MediaMatch renderingMode="mobile">
+        <S.IconWapperMenu onClick={handleClosingAndOpeningMenu}>
+          <MenuIcon aria-label="Open Menu" />
+        </S.IconWapperMenu>
+      </MediaMatch>
 
-      <S.LogoWapperMenu>
-        <Logo hideOnMobile />
-      </S.LogoWapperMenu>
+      <section>
+        <S.LogoWapperMenu>
+          <Logo hideOnMobile />
+        </S.LogoWapperMenu>
+
+        <MediaMatch renderingMode="desktop">
+          <MenuNav />
+        </MediaMatch>
+      </section>
 
       <section>
         <S.IconWapperMenu>
@@ -41,6 +51,10 @@ const Menu = ({ username }: MenuProps) => {
         <S.IconWapperMenu>
           <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWapperMenu>
+
+        <MediaMatch renderingMode="desktop">
+          {!username && <Button size="medium">Sign In</Button>}
+        </MediaMatch>
       </section>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>

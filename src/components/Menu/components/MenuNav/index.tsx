@@ -1,7 +1,7 @@
 import * as S from '../../styles'
 
 type MenuNavPros = {
-  isLoggedIn: boolean
+  isLoggedIn?: boolean
 }
 
 const MenuNav = ({ isLoggedIn }: MenuNavPros) => {
