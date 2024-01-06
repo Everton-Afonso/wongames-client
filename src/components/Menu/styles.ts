@@ -1,6 +1,6 @@
 'use client'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const WrapperMenu = styled.menu`
   display: flex;
@@ -28,4 +28,14 @@ export const IconWapperMenu = styled.div`
   cursor: pointer;
   width: 24px;
   height: 24px;
+`
+
+type MenuFullProps = {
+  isOpen: boolean
+}
+
+export const MenuFull = styled.nav<MenuFullProps>`
+  ${({ isOpen }) => css`
+    opacity: ${isOpen ? 1 : 0};
+  `}
 `
