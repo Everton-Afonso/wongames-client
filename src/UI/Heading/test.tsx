@@ -26,7 +26,7 @@ describe('<Heading />', () => {
 
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
       'border-left',
-      '7px solid var(--secondary)'
+      '4px solid var(--primary)'
     )
   })
 
@@ -35,7 +35,60 @@ describe('<Heading />', () => {
 
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
       'border-bottom',
-      '5px solid var(--primary)',
+      '4px solid var(--primary)',
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
+  it('should render a heading with a samll size', () => {
+    render(<Heading size="medium">Won Games</Heading>)
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
+      'font-size',
+      'var(--medium)'
+    )
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
+      'width',
+      '30px',
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
+  it('should render a Heading with a primary line color', () => {
+    render(
+      <Heading lineColor="primary" lineLeft lineBottom>
+        Lorem Ipsum
+      </Heading>
+    )
+
+    const heading = screen.getByRole('heading', { name: /lorem ipsum/i })
+    expect(heading).toHaveStyleRule('border-left', '4px solid var(--primary)')
+    expect(heading).toHaveStyleRule(
+      'border-bottom',
+      '4px solid var(--primary)',
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
+  it('should render a Heading with a secondary line color', () => {
+    render(
+      <Heading lineColor="secondary" lineLeft lineBottom>
+        Lorem Ipsum
+      </Heading>
+    )
+
+    const heading = screen.getByRole('heading', { name: /lorem ipsum/i })
+    expect(heading).toHaveStyleRule('border-left', '4px solid var(--secondary)')
+    expect(heading).toHaveStyleRule(
+      'border-bottom',
+      '4px solid var(--secondary)',
       {
         modifier: '::after'
       }
