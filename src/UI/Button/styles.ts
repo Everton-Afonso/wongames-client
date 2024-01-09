@@ -31,10 +31,6 @@ const wrapperModifiersButton = {
   `,
 
   withIcon: () => css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     svg {
       width: 18px;
 
@@ -47,6 +43,9 @@ const wrapperModifiersButton = {
 
 export const WrapperButton = styled.button<WrapperButtonProps>`
   ${({ size, fullWidth, hasIcon }) => css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: var(--radius);
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: var(--white);
@@ -54,6 +53,7 @@ export const WrapperButton = styled.button<WrapperButtonProps>`
     padding: 4px 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 
     &:hover {
       background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
