@@ -53,6 +53,11 @@ export const WrapperButton = styled.button<WrapperButtonProps>`
     border: none;
     padding: 4px 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+    }
 
     ${!!size && wrapperModifiersButton[size]}
     ${!!fullWidth && wrapperModifiersButton.fullWidth()}
