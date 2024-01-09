@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`${css`
   :root {
     //grid
     --contaier: 130rem;
-    --gutter: 3.2rem;
+    --gutter: 2rem;
 
     //border
     --radius: 4px;
