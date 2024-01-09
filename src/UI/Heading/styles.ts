@@ -19,7 +19,7 @@ const wrapperModifiers = {
 
   lineBottom: (lineColor: LineColor) => css`
     position: relative;
-    margin-bottom: var(--medium-spacings);
+    margin-bottom: var(--small-spacings);
 
     &::after {
       position: absolute;
@@ -78,9 +78,5 @@ export const Wrapper = styled.h2<HeadingProps>`
     ${lineLeft && lineColor && wrapperModifiers.lineLeft(lineColor)}
     ${lineBottom && lineColor && wrapperModifiers.lineBottom(lineColor)}
     ${!!size && wrapperModifiers[size]}
-
-    @media screen and (max-width: 768px) {
-      font-size: var(--xlarge);
-    }
   `}
 `
