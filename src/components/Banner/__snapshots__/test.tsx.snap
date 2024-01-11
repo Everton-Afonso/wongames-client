@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner /> should render correctly 1`] = `
+.c1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
+  color: var(--white);
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  height: 40px;
+  font-size: var(--small);
+  padding: 10px 32px;
+}
+
+.c1:hover {
+  background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+}
+
+.c0 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.c0 img {
+  object-fit: cover;
+  width: 100%!important;
+  position: relative!important;
+  height: unset!important;
+  min-height: 230px;
+  background-color: var(--lightGray);
+}
+
+.c0 section {
+  width: 100%;
+  background-color: var(--darkGray);
+  padding: var(--small-spacings);
+}
+
+.c0 section h2 {
+  font-size: var(--large);
+  font-weight: var(--bold);
+  color: var(--white);
+}
+
+.c0 section h3 {
+  color: var(--white);
+  font-size: var(--small);
+  font-weight: var(--normal);
+  margin: 5px 0 var(--xsmall-spacings);
+}
+
+.c0 section h3 strong {
+  color: var(--primary);
+  font-weight: var(--bold);
+}
+
+@media screen and (min-width: 768px) {
+  .c0 {
+    box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .c0 section {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: var(--large-spacings);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .c0 section h2 {
+    font-size: var(--xxlarge);
+  }
+
+  .c0 section h3 {
+    font-size: var(--large);
+  }
+}
+
+<main
+  class="c0"
+>
+  <img
+    alt="Defy death"
+    data-nimg="fill"
+    decoding="async"
+    loading="lazy"
+    sizes="100vw"
+    src="/_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=3840&q=75"
+    srcset="/_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fsource.unsplash.com%2Fuser%2Fwillianjusten%2F1042x580&w=3840&q=75 3840w"
+    style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+  />
+  <section>
+    <h2>
+      Defy death
+    </h2>
+    <h3>
+      <p>
+        Play the new 
+        <strong>
+          CrashLands
+        </strong>
+         season
+      </p>
+    </h3>
+    <a
+      class="c1"
+      href="/games/defy-death"
+    >
+      <span>
+        Buy now
+      </span>
+    </a>
+  </section>
+</main>
+`;
