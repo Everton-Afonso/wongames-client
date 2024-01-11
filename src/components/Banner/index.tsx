@@ -23,14 +23,14 @@ const Banner = ({
     <S.WrapperBanner>
       <Image src={img} alt={title} layout="fill" />
 
-      <S.Caption>
-        <S.Title>{title}</S.Title>
-        <S.Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
+      <section>
+        <h2>{title}</h2>
+        <h3 dangerouslySetInnerHTML={{ __html: subtitle }} />
 
-        <Button as="a" href={buttonLink} size="large">
+        <Button as="a" href={buttonLink} size="medium">
           {buttonLabel}
         </Button>
-      </S.Caption>
+      </section>
     </S.WrapperBanner>
   )
 }
