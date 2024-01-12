@@ -4,9 +4,10 @@ import Ribbon from '.'
 
 describe('<Ribbon />', () => {
   it('should render the text conrrectly', () => {
-    render(<Ribbon>Best Seller</Ribbon>)
+    const { container } = render(<Ribbon>Best Seller</Ribbon>)
 
     expect(screen.getByText(/best seller/i)).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render with the primary color', () => {
