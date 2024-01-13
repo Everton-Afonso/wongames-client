@@ -1,11 +1,22 @@
 'use client'
 
 import styled from 'styled-components'
+import * as RibbonStyles from '../Ribbon/styles'
 
 export const WrapperBanner = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1024px) {
+    ${RibbonStyles.WrapperRibbon} {
+      right: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
 
   @media screen and (min-width: 768px) {
     box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
