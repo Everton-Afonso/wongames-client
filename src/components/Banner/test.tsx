@@ -26,4 +26,21 @@ describe('<Banner />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('dhould render a Ribbon componente', () => {
+    render(
+      <Banner
+        {...props}
+        ribbon="20% off"
+        riboonSize="small"
+        ribbonColor="secondary"
+      />
+    )
+
+    const ribbon = screen.getByText(/20% off/i)
+    expect(ribbon).toBeInTheDocument()
+    expect(ribbon).toHaveStyleRule('background-color', 'var(--secondary)')
+    expect(ribbon).toHaveStyleRule('height', '24px')
+    expect(ribbon).toHaveStyleRule('font-size', 'var(--xsmall)')
+  })
 })
