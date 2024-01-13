@@ -1,9 +1,17 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Highlight from '.'
+import Highlight, { HighlightProps } from '.'
 
 export default {
   title: 'Highlight',
-  component: Highlight
+  component: Highlight,
+  args: {
+    title: 'Read Dead está de de volta!',
+    subtitle: 'Venha conhecer as novas aventuras de John Marston',
+    buttonLabel: 'Buy now',
+    buttonLink: '/'
+  }
 } as Meta
 
-export const Default: StoryObj = {}
+export const Default: StoryObj<HighlightProps> = {
+  render: (args) => <Highlight {...args} />
+}
