@@ -1,18 +1,17 @@
 'use client'
 
 import styled, { css } from 'styled-components'
-import { HighlightProps } from '.'
 
-type WrapperHighlightProps = Pick<HighlightProps, 'backgroundImage'>
-
-export const WrapperHighlight = styled.section<WrapperHighlightProps>`
-  ${({ backgroundImage }) => css`
+export const WrapperHighlight = styled.section<{ $backgroundImage: string }>`
+  ${({ $backgroundImage }) => css`
+    display: grid;
     position: relative;
     height: 230px;
-    display: grid;
-    background: url(${backgroundImage}) no-repeat;
+    background: url(${$backgroundImage}) no-repeat;
     background-position: center center;
     background-size: cover;
+    grid-template-areas: 'floatimage content';
+    grid-template-columns: 1.3fr 2fr;
 
     &::after {
       content: '';
@@ -23,7 +22,18 @@ export const WrapperHighlight = styled.section<WrapperHighlightProps>`
       background-color: rgba(0, 0, 0, 0.6);
     }
 
+    img {
+      grid-area: floatimage;
+      position: relative !important;
+      width: initial !important;
+      z-index: var(--base);
+      height: 100%;
+      max-height: 157px;
+      align-self: end;
+    }
+
     div {
+      grid-area: content;
       z-index: var(--base);
       text-align: right;
       padding: var(--xsmall-spacings);
@@ -48,6 +58,10 @@ export const WrapperHighlight = styled.section<WrapperHighlightProps>`
 
     @media screen and (min-width: 768px) {
       height: 320px;
+
+      img {
+        max-height: 310px;
+      }
 
       div {
         align-self: end;

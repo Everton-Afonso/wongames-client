@@ -17,5 +17,21 @@ export default {
 } as Meta
 
 export const Default: StoryObj<HighlightProps> = {
-  render: (args) => <Highlight {...args} />
+  render: (args) => (
+    <div style={{ maxWidth: '65rem' }}>
+      <Highlight {...args} />
+    </div>
+  )
+}
+
+export const WithFloatImage: StoryObj<HighlightProps> = {
+  render: (args) => (
+    <div style={{ maxWidth: '65rem' }}>
+      <Highlight {...args} />
+    </div>
+  )
+}
+
+WithFloatImage.args = {
+  floatImage: '/img/red-dead-float.png'
 }
