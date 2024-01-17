@@ -59,7 +59,6 @@ export const FloatImageWrapper = styled.div`
   ${({ theme }) => css`
     grid-area: floatimage;
     z-index: ${theme.layers.base};
-    align-self: end;
 
     img {
       position: relative !important;
