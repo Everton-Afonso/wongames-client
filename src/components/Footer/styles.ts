@@ -1,41 +1,45 @@
 'use client'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import * as HeadingStyles from '../../UI/Heading/styles'
 
 export const WrapperFooter = styled.footer`
-  ${HeadingStyles.Wrapper} {
-    text-transform: uppercase;
-  }
+  ${({ theme }) => css`
+    ${HeadingStyles.Wrapper} {
+      text-transform: uppercase;
+    }
 
-  section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--gutter);
-    margin-top: var(--medium-spacings);
+    section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: ${theme.grid.gutter};
+      margin-top: ${theme.spacings.medium};
 
-    div {
-      a,
-      span {
-        display: block;
-        color: var(--gray);
-        text-decoration: none;
-        margin-bottom: var(--xxsmall-spacings);
-        font-size: var(--small);
+      div {
+        a,
+        span {
+          display: block;
+          color: ${theme.colors.gray};
+          text-decoration: none;
+          margin-bottom: ${theme.spacings.xxsmall};
+          font-size: ${theme.font.sizes.small};
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
-
-    @media screen and (min-width: 768px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
+  `}
 `
 
 export const Copyright = styled.div`
-  color: var(--gray);
-  font-size: var(--xsmall);
-  margin-top: var(--large-spacings);
-  margin-bottom: var(--medium-spacings);
-  text-align: center;
+  ${({ theme }) => css`
+    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.xsmall};
+    margin-top: ${theme.spacings.large};
+    margin-bottom: ${theme.spacings.medium};
+    text-align: center;
+  `}
 `

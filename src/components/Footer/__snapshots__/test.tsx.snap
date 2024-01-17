@@ -62,24 +62,24 @@ exports[`<Footer /> should render 4 column topics 1`] = `
 .c0 section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--gutter);
-  margin-top: var(--medium-spacings);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .c0 section div a,
 .c0 section div span {
   display: block;
-  color: var(--gray);
+  color: #8F8F8F;
   text-decoration: none;
-  margin-bottom: var(--xxsmall-spacings);
-  font-size: var(--small);
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
 }
 
 .c5 {
-  color: var(--gray);
-  font-size: var(--xsmall);
-  margin-top: var(--large-spacings);
-  margin-bottom: var(--medium-spacings);
+  color: #8F8F8F;
+  font-size: 0.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
