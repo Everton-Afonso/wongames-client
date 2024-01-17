@@ -1,15 +1,37 @@
 'use client'
 
 import styled, { css } from 'styled-components'
+import { HighlightProps } from '.'
 
-export const WrapperHighlight = styled.section<{ $backgroundImage: string }>`
-  ${({ $backgroundImage }) => css`
+type WrapperProps = Pick<HighlightProps, 'alignment'>
+
+const wrapperModifiers = {
+  right: () => css`
+    grid-template-areas: 'floatimage content';
+    grid-template-columns: 1.3fr 2fr;
+
+    ${Content} {
+      text-align: right;
+    }
+  `,
+  left: () => css`
+    grid-template-areas: 'content floatimage';
+    grid-template-columns: 2fr 1.3fr;
+
+    ${Content} {
+      text-align: left;
+    }
+
+    ${FloatImageWrapper} {
+      justify-self: end;
+    }
+  `
+}
+
+export const WrapperHighlight = styled.section<WrapperProps>`
+  ${({ alignment }) => css`
     display: grid;
     position: relative;
-    height: 230px;
-    background: url(${$backgroundImage}) no-repeat;
-    background-position: center center;
-    background-size: cover;
     grid-template-areas: 'floatimage content';
     grid-template-columns: 1.3fr 2fr;
 
@@ -18,63 +40,71 @@ export const WrapperHighlight = styled.section<{ $backgroundImage: string }>`
       position: absolute;
       width: 100%;
       height: 100%;
-
       background-color: rgba(0, 0, 0, 0.6);
     }
 
-    img {
-      grid-area: floatimage;
-      position: relative !important;
-      width: initial !important;
-      z-index: var(--base);
-      height: 100%;
-      max-height: 157px;
-      align-self: end;
+    & > img {
+      object-fit: cover;
     }
 
-    div {
-      grid-area: content;
-      z-index: var(--base);
-      text-align: right;
-      padding: var(--xsmall-spacings);
-
-      h2 {
-        color: var(--white);
-        font-size: var(--large);
-        font-style: normal;
-        font-weight: var(--bold);
-        line-height: normal;
-      }
-
-      h3 {
-        color: var(--white);
-        font-size: var(--small);
-        font-style: normal;
-        font-weight: var(--light);
-        line-height: normal;
-        margin-bottom: 12px;
-      }
-    }
+    ${wrapperModifiers[alignment!]()}
 
     @media screen and (min-width: 768px) {
       height: 320px;
+    }
+  `}
+`
 
-      img {
-        max-height: 310px;
+export const FloatImageWrapper = styled.div`
+  ${({ theme }) => css`
+    grid-area: floatimage;
+    z-index: ${theme.layers.base};
+    align-self: end;
+
+    img {
+      position: relative !important;
+      object-fit: contain;
+      max-height: 320px;
+      max-width: 266px;
+      min-height: 157px;
+    }
+  `}
+`
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    grid-area: content;
+    z-index: ${theme.layers.base};
+    padding: ${theme.spacings.xsmall};
+
+    h2 {
+      color: ${theme.colors.white};
+      font-size: ${theme.font.sizes.large};
+      font-weight: ${theme.font.bold};
+      font-style: normal;
+      line-height: normal;
+    }
+
+    h3 {
+      color: ${theme.colors.white};
+      font-size: ${theme.font.sizes.small};
+      font-weight: ${theme.font.light};
+      font-style: normal;
+      line-height: normal;
+      margin-bottom: 12px;
+    }
+
+    @media screen and (min-width: 768px) {
+      align-self: end;
+      padding: ${theme.spacings.large};
+
+      h2 {
+        font-size: ${theme.font.sizes.xxlarge};
       }
 
-      div {
-        align-self: end;
-        padding: var(--xlarge-spacings);
-        h2 {
-          font-size: var(--xxlarge);
-          margin-bottom: 12px;
-        }
-
-        h3 {
-          font-size: var(--large);
-          margin-bottom: 24px;
-        }
+      h3 {
+        font-size: ${theme.font.sizes.large};
+        margin-bottom: 24px;
       }
     }
   `}

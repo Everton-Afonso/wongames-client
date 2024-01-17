@@ -1,5 +1,4 @@
-import { render, screen } from '@testing-library/react'
-
+import { render, screen } from '../../utils/tests/helpers'
 import Highlight from '.'
 
 const props = {
@@ -32,11 +31,14 @@ describe('<Highlight />', () => {
   })
 
   it('should render background image', () => {
-    const { container } = render(<Highlight {...props} />)
+    render(<Highlight {...props} />)
 
-    expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
-    })
+    expect(
+      screen.getByRole('img', { name: `${props.title} background` })
+    ).toHaveAttribute(
+      'src',
+      `/_next/image?url=%2Fimg%2Fred-dead-img.jpg&w=3840&q=75`
+    )
   })
 
   it('should render float image', () => {
@@ -49,6 +51,24 @@ describe('<Highlight />', () => {
     ).toHaveAttribute(
       'src',
       '/_next/image?url=%2Fimg%2Fred-dead-float.png&w=3840&q=75'
+    )
+  })
+
+  it('should render aling right by default', () => {
+    const { container } = render(<Highlight {...props} />)
+
+    expect(container.firstChild).toHaveStyleRule(
+      'grid-template-areas',
+      "'floatimage content'"
+    )
+  })
+
+  it('should render aling right by default', () => {
+    const { container } = render(<Highlight {...props} alignment="left" />)
+
+    expect(container.firstChild).toHaveStyleRule(
+      'grid-template-areas',
+      "'content floatimage'"
     )
   })
 })
