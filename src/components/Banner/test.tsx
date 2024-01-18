@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../../utils/tests/helpers'
 
 import Banner from '.'
 
@@ -27,7 +27,7 @@ describe('<Banner />', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  it('dhould render a Ribbon componente', () => {
+  it('hould render a Ribbon componente', () => {
     render(
       <Banner
         {...props}

@@ -1,5 +1,9 @@
-import Main from '@/components/Main'
+import Button from '@/UI/Button'
 
 export default function Home() {
-  return <Main />
+  return (
+    <Button size="medium" fullWidth as="a" href="/">
+      Everton
+    </Button>
+  )
 }

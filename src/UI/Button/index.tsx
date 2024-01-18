@@ -23,9 +23,9 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <S.WrapperButton
-      size={size}
-      fullWidth={fullWidth}
-      hasIcon={!!icon}
+      $size={size}
+      $fullWidth={fullWidth}
+      $hasIcon={!!icon}
       {...props}
     >
       {!!icon && icon}
