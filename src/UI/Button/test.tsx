@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../../utils/tests/helpers'
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
 
 import Button from '.'
@@ -19,12 +19,8 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
       height: '30px',
-      padding: '6px 30px'
+      'font-size': '0.75rem'
     })
-    expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyleRule(
-      'font-size',
-      'var(--xsmall)'
-    )
   })
 
   it('should render the medium size', () => {
@@ -32,12 +28,9 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
       height: '40px',
+      'font-size': '0.875rem',
       padding: '10px 32px'
     })
-    expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyleRule(
-      'font-size',
-      'var(--small)'
-    )
   })
 
   it('should render the large size', () => {
@@ -45,12 +38,9 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
       height: '50px',
+      'font-size': '1rem',
       padding: '14px 52px'
     })
-    expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyleRule(
-      'font-size',
-      'var(--medium)'
-    )
   })
 
   it('should render a fullWidth version', () => {

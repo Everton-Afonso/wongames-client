@@ -1,28 +1,29 @@
 'use client'
 
-import styled, { css } from 'styled-components'
-import { ButtonProps } from '.'
+import styled, { css, DefaultTheme } from 'styled-components'
 
 type WrapperButtonProps = {
-  hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'fullWidth'>
+  $hasIcon?: boolean
+  $size?: 'small' | 'medium' | 'large'
+  $fullWidth?: boolean
+}
 
 const wrapperModifiersButton = {
-  small: () => css`
+  small: (theme: DefaultTheme) => css`
     height: 30px;
-    font-size: var(--xsmall);
+    font-size: ${theme.font.sizes.xsmall};
     padding: 6px 30px;
   `,
 
-  medium: () => css`
+  medium: (theme: DefaultTheme) => css`
     height: 40px;
-    font-size: var(--small);
+    font-size: ${theme.font.sizes.small};
     padding: 10px 32px;
   `,
 
-  large: () => css`
+  large: (theme: DefaultTheme) => css`
     height: 50px;
-    font-size: var(--medium);
+    font-size: ${theme.font.sizes.medium};
     padding: 14px 52px;
   `,
 
@@ -42,13 +43,13 @@ const wrapperModifiersButton = {
 }
 
 export const WrapperButton = styled.button<WrapperButtonProps>`
-  ${({ size, fullWidth, hasIcon }) => css`
+  ${({ theme, $size, $fullWidth, $hasIcon }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius);
+    border-radius: ${theme.border.radius};
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
-    color: var(--white);
+    color: ${theme.colors.white};
     border: none;
     padding: 4px 8px;
     cursor: pointer;
@@ -59,8 +60,8 @@ export const WrapperButton = styled.button<WrapperButtonProps>`
       background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
     }
 
-    ${!!size && wrapperModifiersButton[size]}
-    ${!!fullWidth && wrapperModifiersButton.fullWidth()}
-    ${!!hasIcon && wrapperModifiersButton.withIcon()}
+    ${!!$size && wrapperModifiersButton[$size](theme)}
+    ${!!$fullWidth && wrapperModifiersButton.fullWidth()}
+    ${!!$hasIcon && wrapperModifiersButton.withIcon()}
   `}
 `
