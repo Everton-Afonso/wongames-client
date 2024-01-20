@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../../utils/tests/helpers'
 
 import Ribbon from '.'
 
@@ -13,51 +13,43 @@ describe('<Ribbon />', () => {
   it('should render with the primary color', () => {
     render(<Ribbon>Best Seller</Ribbon>)
 
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule(
-      'background-color',
-      'var(--primary)'
-    )
+    expect(screen.getByText(/best seller/i)).toHaveStyle({
+      backgroundColor: '#F231A5'
+    })
   })
 
   it('should render with the secondary color', () => {
     render(<Ribbon color="secondary">Best Seller</Ribbon>)
 
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule(
-      'background-color',
-      'var(--secondary)'
-    )
+    expect(screen.getByText(/best seller/i)).toHaveStyle({
+      backgroundColor: '#3CD3C1'
+    })
   })
 
-  it('should render with the samll size', () => {
+  it('should render with the small size', () => {
     render(<Ribbon sizes="small">Best Seller</Ribbon>)
 
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule('height', '24px')
-
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule(
-      'font-size',
-      'var(--xsmall)'
-    )
+    expect(screen.getByText(/best seller/i)).toHaveStyle({
+      height: '24px',
+      fontSize: '0.75rem'
+    })
   })
 
   it('should render with the normal size as default', () => {
     render(<Ribbon>Best Seller</Ribbon>)
 
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule('height', '33px')
-
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule(
-      'font-size',
-      'var(--small)'
-    )
+    expect(screen.getByText(/best seller/i)).toHaveStyle({
+      height: '33px',
+      fontSize: '0.875rem'
+    })
   })
 
   it('should render with the large size', () => {
     render(<Ribbon sizes="large">Best Seller</Ribbon>)
 
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule('height', '40px')
-
-    expect(screen.getByText(/best seller/i)).toHaveStyleRule(
-      'font-size',
-      'var(--large)'
-    )
+    expect(screen.getByText(/best seller/i)).toHaveStyle({
+      height: '40px',
+      fontSize: '1.125rem'
+    })
   })
 })
