@@ -1,26 +1,37 @@
 import 'match-media-mock'
 
-import { render } from '@testing-library/react'
+import { render, screen } from '../../utils/tests/helpers'
 import { Settings } from 'react-slick'
 
 import Slider from '.'
 
 describe('<Slider />', () => {
-  it('should render the Slider', () => {
+  it('should render children as slider item', () => {
     const settings: Settings = {
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 2000,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
       pauseOnHover: true
     }
 
-    render(
+    const { container } = render(
       <Slider settings={settings}>
-        <div>1</div>
+        <div>Item 1</div>
+        <div>Item 2</div>
       </Slider>
     )
+
+    expect(
+      screen.getByText(/item 1/i).parentElement?.parentElement
+    ).toHaveClass('slick-slide')
+
+    expect(
+      screen.getByText(/item 2/i).parentElement?.parentElement
+    ).toHaveClass('slick-slide')
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
