@@ -14,7 +14,8 @@ export default {
   argTypes: {
     onFav: {
       action: 'clicked'
-    }
+    },
+    ribbon: { type: 'string' }
   },
   parameters: {
     backgrounds: {
@@ -29,4 +30,18 @@ export const Default: StoryObj<GameCardProps> = {
       <GameCard {...args} />
     </div>
   )
+}
+
+export const WithRibbon: StoryObj<GameCardProps> = {
+  render: (args) => (
+    <div style={{ maxWidth: '18.75rem' }}>
+      <GameCard {...args} />
+    </div>
+  )
+}
+
+WithRibbon.args = {
+  ribbon: '20% OFF',
+  ribbonSize: 'small',
+  ribbonColor: 'primary'
 }
