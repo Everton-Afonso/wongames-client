@@ -37,7 +37,7 @@ const Banner = ({
         </Ribbon>
       )}
 
-      <Image src={img} alt={title} layout="fill" />
+      <Image src={img} alt={title} fill={true} />
 
       <section>
         <h2>{title}</h2>

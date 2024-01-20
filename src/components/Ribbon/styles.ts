@@ -1,32 +1,22 @@
 'use client'
 
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 
-import { RibbonProps } from '.'
+import { RibbonColors, RibbonProps } from '.'
 
 const wrapperModifiers = {
-  primary: () => css`
-    background-color: var(--primary);
+  color: (theme: DefaultTheme, color: RibbonColors) => css`
+    background-color: ${theme.colors[color]};
 
     &::before {
-      border-left-color: var(--primary);
-      border-top-color: var(--primary);
+      border-left-color: ${theme.colors[color]};
+      border-top-color: ${theme.colors[color]};
       filter: brightness(50%);
     }
   `,
 
-  secondary: () => css`
-    background-color: var(--secondary);
-
-    &::before {
-      border-left-color: var(--secondary);
-      border-top-color: var(--secondary);
-      filter: brightness(50%);
-    }
-  `,
-
-  small: () => css`
-    font-size: var(--xsmall);
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.xsmall};
     height: 24px;
     padding: 0 16px;
     right: -13px;
@@ -38,8 +28,8 @@ const wrapperModifiers = {
     }
   `,
 
-  normal: () => css`
-    font-size: var(--small);
+  normal: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.small};
     height: 33px;
     padding: 0 16px;
     right: -14px;
@@ -51,8 +41,8 @@ const wrapperModifiers = {
     }
   `,
 
-  large: () => css`
-    font-size: var(--large);
+  large: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.large};
     height: 40px;
     padding: 0 16px;
     right: -22px;
@@ -66,14 +56,14 @@ const wrapperModifiers = {
 }
 
 export const WrapperRibbon = styled.div<Omit<RibbonProps, 'children'>>`
-  ${({ color, sizes }) => css`
+  ${({ theme, color, sizes }) => css`
     z-index: 1;
     position: absolute;
-    top: var(--xsmall-spacings);
+    top: ${theme.spacings.xsmall};
     display: flex;
     align-items: center;
-    font-weight: var(--bold);
-    color: var(--white);
+    font-weight: ${theme.font.bold};
+    color: ${theme.colors.white};
 
     &::before {
       content: '';
@@ -86,7 +76,7 @@ export const WrapperRibbon = styled.div<Omit<RibbonProps, 'children'>>`
       border-bottom-width: 1rem;
     }
 
-    ${!!color && wrapperModifiers[color]}
-    ${!!sizes && wrapperModifiers[sizes]}
+    ${!!color && wrapperModifiers.color(theme, color)}
+    ${!!sizes && wrapperModifiers[sizes](theme)}
   `}
 `

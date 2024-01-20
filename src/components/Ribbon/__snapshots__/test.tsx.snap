@@ -4,13 +4,13 @@ exports[`<Ribbon /> should render the text conrrectly 1`] = `
 .c0 {
   z-index: 1;
   position: absolute;
-  top: var(--xsmall-spacings);
+  top: 1rem;
   display: flex;
   align-items: center;
-  font-weight: var(--bold);
-  color: var(--white);
-  background-color: var(--primary);
-  font-size: var(--small);
+  font-weight: 600;
+  color: #FAFAFA;
+  background-color: #F231A5;
+  font-size: 0.875rem;
   height: 33px;
   padding: 0 16px;
   right: -14px;
@@ -28,8 +28,8 @@ exports[`<Ribbon /> should render the text conrrectly 1`] = `
 }
 
 .c0::before {
-  border-left-color: var(--primary);
-  border-top-color: var(--primary);
+  border-left-color: #F231A5;
+  border-top-color: #F231A5;
   filter: brightness(50%);
 }
 
