@@ -16,7 +16,7 @@ const BannerSlider = ({ items }: BannerSliderProps) => {
     infinite: true,
     autoplay: true,
     pauseOnHover: true,
-    speed: 2000,
+    speed: 1000,
     responsive: [
       {
         breakpoint: 1170,

@@ -40,7 +40,7 @@ export default {
 
 export const Default: StoryObj<BannerSliderProps> = {
   render: (args) => (
-    <div style={{ maxWidth: '1042px', maxHeight: '584px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '1280px', maxHeight: '584px', margin: '0 auto' }}>
       <BannerSlider {...args} />
     </div>
   )
