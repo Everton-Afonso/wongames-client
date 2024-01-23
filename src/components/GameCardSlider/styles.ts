@@ -44,8 +44,8 @@ export const WrapperGameCardSlider = styled.section<WrapperProps>`
       cursor: pointer;
       position: absolute;
       top: 50%;
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 25px;
+      height: 25px;
       padding: 0;
       transform: translate(0, -50%);
     }

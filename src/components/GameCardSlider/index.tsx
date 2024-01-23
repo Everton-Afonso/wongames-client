@@ -11,8 +11,9 @@ export type GameCardSliderProps = {
   color?: 'white' | 'black'
 }
 
-const GameCardSlider = ({ items, color = 'black' }: GameCardSliderProps) => {
+const GameCardSlider = ({ items, color = 'white' }: GameCardSliderProps) => {
   const settings: SliderSettings = {
+    arrows: true,
     slidesToShow: 4,
     infinite: false,
     lazyLoad: 'ondemand',
