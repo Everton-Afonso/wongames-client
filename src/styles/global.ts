@@ -2,14 +2,18 @@
 
 import { createGlobalStyle, css } from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`${css`
+const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: var(--font-poppins);
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
   }
 
   :root {
@@ -60,14 +64,20 @@ const GlobalStyles = createGlobalStyle`${css`
     --alwaysOnTop: 50;
   }
 
-  html,
-  body {
-    height: 100%;
-  }
+  ${({ theme }) => css`
+    html,
+    body {
+      height: 100%;
+    }
 
-  html {
-    scroll-behavior: smooth;
-  }
-`}`
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: ${theme.font.family};
+    }
+  `}
+`
 
 export default GlobalStyles
