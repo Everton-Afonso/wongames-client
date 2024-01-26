@@ -76,6 +76,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       font-family: ${theme.font.family};
+      background: ${theme.colors.mainBg};
     }
   `}
 `

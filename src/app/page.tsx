@@ -1,9 +1,5 @@
-import Button from '@/UI/Button'
+import HomePage from '@/templates/HomePage'
 
 export default function Home() {
-  return (
-    <Button size="medium" fullWidth as="a" href="/">
-      Everton
-    </Button>
-  )
+  return <HomePage />
 }
