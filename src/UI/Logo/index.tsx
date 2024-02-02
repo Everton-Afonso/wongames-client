@@ -12,7 +12,7 @@ const Logo = ({
   hideOnMobile = false
 }: LogoProps) => {
   return (
-    <S.Wrapper color={color} size={size} hideOnMobile={hideOnMobile}>
+    <S.Wrapper color={color} size={size} $hideOnMobile={hideOnMobile}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
