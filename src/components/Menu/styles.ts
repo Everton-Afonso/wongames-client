@@ -8,7 +8,13 @@ export const WrapperMenu = styled.menu`
     align-items: center;
     padding: ${theme.spacings.xxsmall} 0;
     justify-content: space-between;
+    padding-left: calc(${theme.grid.gutter} / 2);
+    padding-right: calc(${theme.grid.gutter} / 2);
     position: relative;
+    z-index: 1;
+    max-width: ${theme.grid.container};
+    margin-left: auto;
+    margin-right: auto;
 
     section {
       display: flex;
@@ -83,7 +89,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: var(--white);
+    background: ${theme.colors.white};
     position: absolute;
     top: 0;
     bottom: 0;
@@ -115,7 +121,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
       a {
         color: ${theme.colors.black};
         font-weight: ${theme.font.bold};
-        font-size: ${theme.spacings.xlarge};
+        font-size: ${theme.spacings.small};
         margin-bottom: ${theme.spacings.small};
         transform: ${$isOpen ? 'translateY(0)' : 'translateY(3rem)'};
         transition: transform 0.3s ease-in-out;
@@ -138,7 +144,7 @@ export const RegisterBox = styled.div`
 
     > span {
       display: block;
-      margin: ${theme.spacings.xxlarge} 0;
+      margin: ${theme.spacings.xxsmall} 0;
       font-size: ${theme.font.sizes.xsmall};
     }
 
