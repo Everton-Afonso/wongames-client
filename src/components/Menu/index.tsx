@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
@@ -27,7 +29,7 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <S.WrapperMenu>
-      <MediaMatch renderingMode="mobile">
+      <MediaMatch $renderingMode="mobile">
         <S.IconWapperMenu onClick={handleClosingAndOpeningMenu}>
           <MenuIcon aria-label="Open Menu" />
         </S.IconWapperMenu>
@@ -38,7 +40,7 @@ const Menu = ({ username }: MenuProps) => {
           <Logo hideOnMobile />
         </S.LogoWapperMenu>
 
-        <MediaMatch renderingMode="desktop">
+        <MediaMatch $renderingMode="desktop">
           <MenuNav />
         </MediaMatch>
       </section>
@@ -52,12 +54,12 @@ const Menu = ({ username }: MenuProps) => {
           <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWapperMenu>
 
-        <MediaMatch renderingMode="desktop">
+        <MediaMatch $renderingMode="desktop">
           {!username && <Button size="medium">Sign In</Button>}
         </MediaMatch>
       </section>
 
-      <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
+      <S.MenuFull aria-hidden={!isOpen} $isOpen={isOpen}>
         <CloseIcon
           aria-label="Close Menu"
           onClick={handleClosingAndOpeningMenu}

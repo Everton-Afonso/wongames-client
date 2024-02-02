@@ -2,7 +2,11 @@
 
 import styled, { css } from 'styled-components'
 
-import { LogoProps } from '.'
+export type LogoProps = {
+  color?: 'white' | 'black'
+  size?: 'normal' | 'large'
+  $hideOnMobile?: boolean
+}
 
 const wrapperModifiers = {
   normal: () => css`
@@ -41,9 +45,9 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.div<LogoProps>`
-  ${({ color, size, hideOnMobile }) => css`
+  ${({ color, size, $hideOnMobile }) => css`
     ${!!color && wrapperModifiers[color]}
     ${!!size && wrapperModifiers[size]}
-    ${!!hideOnMobile && wrapperModifiers.hideOnMobile}
+    ${!!$hideOnMobile && wrapperModifiers.hideOnMobile}
   `}
 `

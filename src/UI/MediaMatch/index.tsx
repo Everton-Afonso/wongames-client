@@ -3,7 +3,7 @@
 import styled, { css } from 'styled-components'
 
 export type MediaMatchProps = {
-  renderingMode: 'desktop' | 'mobile'
+  $renderingMode: 'desktop' | 'mobile'
 }
 
 const mediaMatchModifiers = {
@@ -21,8 +21,8 @@ const mediaMatchModifiers = {
 }
 
 export default styled.div<MediaMatchProps>`
-  ${({ renderingMode }) => css`
+  ${({ $renderingMode }) => css`
     display: none;
-    ${!!renderingMode && mediaMatchModifiers[renderingMode]}
+    ${!!$renderingMode && mediaMatchModifiers[$renderingMode]}
   `}
 `
