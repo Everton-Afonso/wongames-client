@@ -41,7 +41,7 @@ export const IconWapperMenu = styled.div`
   `}
 `
 
-export const MenuNav = styled.div`
+export const MenuNav = styled.section`
   ${({ theme }) => css`
     @media screen and (min-width: 768px) {
       margin-left: ${theme.spacings.xsmall};
@@ -111,7 +111,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
       height: 24px;
     }
 
-    ${MenuNav} {
+    section {
       display: flex;
       align-items: center;
       justify-content: center;

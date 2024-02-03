@@ -72,6 +72,14 @@ const GlobalStyles = createGlobalStyle`
 
     html {
       scroll-behavior: smooth;
+
+      @media screen and (max-width: 1080px) {
+        font-size: 93.75%; //15px
+      }
+
+      @media screen and (max-width: 720px) {
+        font-size: 87.5%; //14px
+      }
     }
 
     body {
