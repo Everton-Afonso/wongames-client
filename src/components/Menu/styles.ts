@@ -6,7 +6,7 @@ export const WrapperMenu = styled.menu`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    padding: ${theme.spacings.xxsmall} 0;
+    padding: ${theme.spacings.small} 0;
     justify-content: space-between;
     padding-left: calc(${theme.grid.gutter} / 2);
     padding-right: calc(${theme.grid.gutter} / 2);
