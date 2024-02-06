@@ -4,7 +4,7 @@ import Banner, { BannerProps } from '../Banner'
 import * as S from './styles'
 
 export type BannerSliderProps = {
-  items: BannerProps[]
+  items: readonly BannerProps[]
 }
 
 const BannerSlider = ({ items }: BannerSliderProps) => {
@@ -13,10 +13,7 @@ const BannerSlider = ({ items }: BannerSliderProps) => {
     arrows: false,
     vertical: true,
     verticalSwiping: true,
-    infinite: true,
-    autoplay: true,
-    pauseOnHover: true,
-    speed: 1000,
+    infinite: false,
     responsive: [
       {
         breakpoint: 1170,

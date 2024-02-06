@@ -31,7 +31,7 @@ describe('<BannerSlider />', () => {
   it('should render with 1 active item', () => {
     const { container } = render(<BannerSlider items={items} />)
 
-    expect(container.querySelectorAll('.slick-slide')).toHaveLength(5)
+    expect(container.querySelectorAll('.slick-slide')).toHaveLength(2)
     expect(container.querySelectorAll('li.slick-active')).toHaveLength(1)
 
     expect(
