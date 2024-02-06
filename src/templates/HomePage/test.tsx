@@ -1,3 +1,5 @@
+import 'match-media-mock'
+
 import { render, screen } from '../../utils/tests/helpers'
 
 import HomePage from '.'
