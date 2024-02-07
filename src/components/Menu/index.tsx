@@ -29,34 +29,36 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <S.WrapperMenu>
-      <MediaMatch $renderingMode="mobile">
-        <S.IconWapperMenu onClick={handleClosingAndOpeningMenu}>
-          <MenuIcon aria-label="Open Menu" />
-        </S.IconWapperMenu>
-      </MediaMatch>
-
       <section>
-        <S.LogoWapperMenu>
-          <Logo hideOnMobile />
-        </S.LogoWapperMenu>
-
-        <MediaMatch $renderingMode="desktop">
-          <MenuNav />
+        <MediaMatch $renderingMode="mobile">
+          <S.IconWapperMenu onClick={handleClosingAndOpeningMenu}>
+            <MenuIcon aria-label="Open Menu" />
+          </S.IconWapperMenu>
         </MediaMatch>
-      </section>
 
-      <section>
-        <S.IconWapperMenu>
-          <SearchIcon aria-label="Search" />
-        </S.IconWapperMenu>
+        <div>
+          <S.LogoWapperMenu>
+            <Logo hideOnMobile />
+          </S.LogoWapperMenu>
 
-        <S.IconWapperMenu>
-          <ShoppingCartIcon aria-label="Open Shopping Cart" />
-        </S.IconWapperMenu>
+          <MediaMatch $renderingMode="desktop">
+            <MenuNav />
+          </MediaMatch>
+        </div>
 
-        <MediaMatch $renderingMode="desktop">
-          {!username && <Button size="medium">Sign In</Button>}
-        </MediaMatch>
+        <div>
+          <S.IconWapperMenu>
+            <SearchIcon aria-label="Search" />
+          </S.IconWapperMenu>
+
+          <S.IconWapperMenu>
+            <ShoppingCartIcon aria-label="Open Shopping Cart" />
+          </S.IconWapperMenu>
+
+          <MediaMatch $renderingMode="desktop">
+            {!username && <Button size="medium">Sign In</Button>}
+          </MediaMatch>
+        </div>
       </section>
 
       <S.MenuFull aria-hidden={!isOpen} $isOpen={isOpen}>

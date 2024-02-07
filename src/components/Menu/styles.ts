@@ -4,22 +4,29 @@ import styled, { css } from 'styled-components'
 
 export const WrapperMenu = styled.menu`
   ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    padding: ${theme.spacings.small} 0;
-    justify-content: space-between;
-    padding-left: calc(${theme.grid.gutter} / 2);
-    padding-right: calc(${theme.grid.gutter} / 2);
-    position: relative;
-    z-index: 1;
-    max-width: ${theme.grid.container};
-    margin-left: auto;
-    margin-right: auto;
+    background: ${theme.colors.mainBg};
+    position: sticky;
+    top: 0;
+    z-index: 998;
 
-    section {
+    > section {
       display: flex;
-      gap: 20px;
       align-items: center;
+      padding: ${theme.spacings.small} 0;
+      justify-content: space-between;
+      padding-left: calc(${theme.grid.gutter} / 2);
+      padding-right: calc(${theme.grid.gutter} / 2);
+      position: relative;
+      z-index: ${theme.layers.menu};
+      max-width: ${theme.grid.container};
+      margin-left: auto;
+      margin-right: auto;
+
+      > div:not(:first-child) {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
     }
   `}
 `
@@ -95,6 +102,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 99;
     height: 100vh;
     overflow: hidden;
     transition: opacity 0.3s ease-in-out;
