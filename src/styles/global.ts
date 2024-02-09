@@ -68,6 +68,8 @@ const GlobalStyles = createGlobalStyle`
     html,
     body {
       height: 100%;
+      overflow: auto;
+      scroll-behavior: smooth;
     }
 
     html {
