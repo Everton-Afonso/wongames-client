@@ -4,8 +4,6 @@ import Highlight from '../../components/Highlight'
 
 import { Container } from '../../components/Container'
 import Heading from '../../UI/Heading'
-import Footer from '../../components/Footer'
-import Menu from '../../components/Menu'
 import BannerSlider from '../../components/BannerSlider'
 import GameCardSlider from '../../components/GameCardSlider'
 
@@ -17,8 +15,6 @@ import highlightMock from '../../components/Highlight/mock'
 const HomePage = () => {
   return (
     <section>
-      <Menu />
-
       <Container>
         <BannerSlider items={bannersMock} />
 
@@ -50,10 +46,6 @@ const HomePage = () => {
 
         <Highlight {...highlightMock} />
         <GameCardSlider items={items} />
-      </Container>
-
-      <Container>
-        <Footer />
       </Container>
     </section>
   )

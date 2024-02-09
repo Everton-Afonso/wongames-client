@@ -3,6 +3,9 @@ import { Poppins } from 'next/font/google'
 
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './providers'
+import Menu from '@/components/Menu'
+import { Container } from '@/components/Container'
+import Footer from '@/components/Footer'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -27,7 +30,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <StyledComponentsRegistry>
-          <Providers>{children}</Providers>
+          <Providers>
+            <Menu />
+
+            {children}
+
+            <Container>
+              <Footer />
+            </Container>
+          </Providers>
         </StyledComponentsRegistry>
       </body>
     </html>
