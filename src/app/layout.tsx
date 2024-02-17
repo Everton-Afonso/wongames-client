@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-import StyledComponentsRegistry from '@/lib/registry'
-import { Providers } from './providers'
+import { Providers } from '../providers/providers'
 import Menu from '@/components/Menu'
 import { Container } from '@/components/Container'
 import Footer from '@/components/Footer'
@@ -29,17 +28,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <StyledComponentsRegistry>
-          <Providers>
-            <Menu />
+        <Providers>
+          <Menu />
 
-            {children}
+          {children}
 
-            <Container>
-              <Footer />
-            </Container>
-          </Providers>
-        </StyledComponentsRegistry>
+          <Container>
+            <Footer />
+          </Container>
+        </Providers>
       </body>
     </html>
   )
