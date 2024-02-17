@@ -5,6 +5,8 @@ import * as BannerStyles from '../Banner/styles'
 
 export const WrapperBannerSlider = styled.section`
   ${({ theme }) => css`
+    max-width: ${theme.grid.container};
+
     .slick-dots {
       list-style: none;
       display: flex !important;
@@ -43,11 +45,20 @@ export const WrapperBannerSlider = styled.section`
         visibility: visible;
       }
     }
+    @media screen and (min-width: 1480px) {
+      margin: ${theme.grid.gutter} auto 0 !important;
+
+      ${BannerStyles.WrapperBanner} {
+        max-width: 1366px !important;
+        margin: 0 auto;
+      }
+    }
 
     @media screen and (min-width: 1170px) {
+      margin: ${theme.grid.gutter} calc(${theme.grid.gutter} / 2) 0;
+
       ${BannerStyles.WrapperBanner} {
-        max-width: 1040px;
-        margin: 0 auto;
+        max-width: 1200px;
       }
 
       .slick-dots {
