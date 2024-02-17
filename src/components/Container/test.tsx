@@ -1,4 +1,3 @@
-import theme from '../../styles/theme'
 import { render } from '../../utils/tests/helpers'
 
 import { Container } from '.'
@@ -9,7 +8,7 @@ describe('<Container />', () => {
 
     expect(container.firstChild).toHaveStyleRule(
       'max-width',
-      theme.grid.container
+      'calc(1600px - 200px)'
     )
 
     expect(container.firstChild).toMatchSnapshot()
