@@ -19,7 +19,7 @@ const GameCardSlider = ({ items, color = 'white' }: GameCardSliderProps) => {
     lazyLoad: 'ondemand',
     responsive: [
       {
-        breakpoint: 1375,
+        breakpoint: 1480,
         settings: {
           arrows: false,
           slidesToShow: 3.2

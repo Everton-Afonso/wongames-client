@@ -45,20 +45,22 @@ export const WrapperBannerSlider = styled.section`
         visibility: visible;
       }
     }
-    @media screen and (min-width: 1480px) {
-      margin: ${theme.grid.gutter} auto 0 !important;
 
-      ${BannerStyles.WrapperBanner} {
-        max-width: 1366px !important;
-        margin: 0 auto;
-      }
+    @media screen and (min-width: 1600px) {
+      padding-left: 116px !important;
+    }
+
+    @media screen and (min-width: 1440px) {
+      padding-left: 2rem !important;
     }
 
     @media screen and (min-width: 1170px) {
-      margin: ${theme.grid.gutter} calc(${theme.grid.gutter} / 2) 0;
+      margin: ${theme.grid.gutter} auto 0;
+      padding-right: calc(2rem / 2);
+      padding-left: calc(2rem / 2) !important;
 
       ${BannerStyles.WrapperBanner} {
-        max-width: 1200px;
+        margin-right: 74px;
       }
 
       .slick-dots {
