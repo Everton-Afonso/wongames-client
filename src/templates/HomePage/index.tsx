@@ -15,9 +15,9 @@ import highlightMock from '../../components/Highlight/mock'
 const HomePage = () => {
   return (
     <section>
-      <Container>
-        <BannerSlider items={bannersMock} />
+      <BannerSlider items={bannersMock} />
 
+      <Container>
         <Heading lineLeft lineColor="secondary" color="black">
           New Releases
         </Heading>
