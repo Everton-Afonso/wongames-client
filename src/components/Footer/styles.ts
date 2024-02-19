@@ -6,30 +6,44 @@ import * as HeadingStyles from '../../UI/Heading/styles'
 
 export const WrapperFooter = styled.footer`
   ${({ theme }) => css`
+    margin-top: ${theme.spacings.large};
+    padding-bottom: ${theme.spacings.xsmall};
+    padding-top: ${theme.spacings.xxlarge};
+    background-color: ${theme.colors.white};
+    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
+
     ${HeadingStyles.Wrapper} {
       text-transform: uppercase;
     }
 
-    section {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: ${theme.grid.gutter};
-      margin-top: ${theme.spacings.medium};
+    > section {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+  `}
+`
 
-      div {
-        a,
-        span {
-          display: block;
-          color: ${theme.colors.gray};
-          text-decoration: none;
-          margin-bottom: ${theme.spacings.xxsmall};
-          font-size: ${theme.font.sizes.small};
-        }
-      }
+export const WrapperFooterContainer = styled.section`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: ${theme.grid.gutter};
+    margin-top: ${theme.spacings.medium};
 
-      @media screen and (min-width: 768px) {
-        grid-template-columns: repeat(4, 1fr);
+    div {
+      a,
+      span {
+        display: block;
+        color: ${theme.colors.gray};
+        text-decoration: none;
+        margin-bottom: ${theme.spacings.xxsmall};
+        font-size: ${theme.font.sizes.small};
       }
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
     }
   `}
 `
