@@ -51,16 +51,16 @@ export const WrapperBannerSlider = styled.section`
     }
 
     @media screen and (min-width: 1440px) {
-      padding-left: 2rem !important;
+      padding-left: 2rem;
     }
 
     @media screen and (min-width: 1170px) {
-      margin: ${theme.grid.gutter} auto 0;
+      margin: 0 auto;
       padding-right: calc(2rem / 2);
-      padding-left: calc(2rem / 2) !important;
+      padding-left: calc(2rem / 2);
 
       ${BannerStyles.WrapperBanner} {
-        margin-right: 74px;
+        margin-right: 100px;
       }
 
       .slick-dots {
