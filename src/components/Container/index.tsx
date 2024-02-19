@@ -7,7 +7,9 @@ export const Container = styled.section`
     max-width: calc(${theme.grid.container} - 200px);
     margin-left: auto;
     margin-right: auto;
-    padding-left: calc(${theme.grid.gutter} / 2);
-    padding-right: calc(${theme.grid.gutter} / 2);
+
+    @media screen and (max-width: 1400px) {
+      padding: 0 16px;
+    }
   `}
 `

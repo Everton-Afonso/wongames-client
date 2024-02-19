@@ -5,8 +5,12 @@ exports[`<Container /> should render the heading 1`] = `
   max-width: calc(1600px - 200px);
   margin-left: auto;
   margin-right: auto;
-  padding-left: calc(2rem / 2);
-  padding-right: calc(2rem / 2);
+}
+
+@media screen and (max-width: 1400px) {
+  .c0 {
+    padding: 0 16px;
+  }
 }
 
 <section

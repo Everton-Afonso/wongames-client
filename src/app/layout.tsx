@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google'
 
 import { Providers } from '../providers/providers'
 import Menu from '@/components/Menu'
-import { Container } from '@/components/Container'
 import Footer from '@/components/Footer'
 
 const poppins = Poppins({
@@ -33,9 +32,7 @@ export default function RootLayout({
 
           {children}
 
-          <Container>
-            <Footer />
-          </Container>
+          <Footer />
         </Providers>
       </body>
     </html>
