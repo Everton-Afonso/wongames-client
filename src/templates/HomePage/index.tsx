@@ -10,42 +10,55 @@ import GameCardSlider from '../../components/GameCardSlider'
 import bannersMock from '../../components/BannerSlider/mock'
 import { items } from '../../components/GameCardSlider/mock'
 import highlightMock from '../../components/Highlight/mock'
-// import * as S from './styles'
+
+import * as S from './styles'
 
 const HomePage = () => {
   return (
     <section>
-      <BannerSlider items={bannersMock} />
+      <S.SectionBanner>
+        <BannerSlider items={bannersMock} />
+      </S.SectionBanner>
+
+      <S.SectionNews>
+        <Container>
+          <Heading lineLeft lineColor="secondary">
+            New Releases
+          </Heading>
+
+          <GameCardSlider items={items} color="black" />
+        </Container>
+      </S.SectionNews>
 
       <Container>
-        <Heading lineLeft lineColor="secondary" color="black">
-          New Releases
-        </Heading>
+        <S.SectionMostPopular>
+          <Heading lineLeft lineColor="secondary" color="white">
+            Most Populars
+          </Heading>
 
-        <GameCardSlider items={items} color="black" />
+          <Highlight {...highlightMock} />
+          <GameCardSlider items={items} />
+        </S.SectionMostPopular>
 
-        <Heading lineLeft lineColor="secondary" color="white">
-          Most Populars
-        </Heading>
+        <S.SectionUpcoming>
+          <Heading lineLeft lineColor="secondary" color="white">
+            Coming Soon
+          </Heading>
 
-        <Highlight {...highlightMock} />
-        <GameCardSlider items={items} />
+          <GameCardSlider items={items} />
 
-        <Heading lineLeft lineColor="secondary" color="white">
-          Coming Soon
-        </Heading>
+          <Highlight {...highlightMock} />
+          <GameCardSlider items={items} />
+        </S.SectionUpcoming>
 
-        <GameCardSlider items={items} />
+        <S.SectionFreeGames>
+          <Heading lineLeft lineColor="secondary" color="white">
+            Free Games
+          </Heading>
 
-        <Highlight {...highlightMock} />
-        <GameCardSlider items={items} />
-
-        <Heading lineLeft lineColor="secondary" color="white">
-          Free Games
-        </Heading>
-
-        <Highlight {...highlightMock} />
-        <GameCardSlider items={items} />
+          <Highlight {...highlightMock} />
+          <GameCardSlider items={items} />
+        </S.SectionFreeGames>
       </Container>
     </section>
   )
